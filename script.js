@@ -1,6 +1,6 @@
 
 const cloudName = "dug90vwpe";
-const uploadPreset = "formulario2025"; // Cambiar si configuraste uno personalizado
+const uploadPreset = "formulario2025"; // Asegúrate que esté creado y unsigned
 const sheetURL = "https://script.google.com/macros/s/AKfycbxDdEhzgr3j4b3JYAT9rOwVSfu9g_34y9vbg2Oiay4ogmQmWVtWxfwp4n_ocp-YH4M3HQ/exec";
 
 document.getElementById("myForm").addEventListener("submit", async function(e) {
@@ -16,8 +16,8 @@ document.getElementById("myForm").addEventListener("submit", async function(e) {
 
   const res = await fetch(sheetURL, {
     method: "POST",
+    mode: "no-cors",
     body: JSON.stringify(payload),
-    headers: { "Content-Type": "application/json" },
   });
 
   document.getElementById("mensaje").innerText = "Enviado correctamente.";

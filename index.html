@@ -3,11 +3,12 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Formulario con Fotos</title>
+  <title>Formulario con Fotos - FormSubmit</title>
 </head>
 <body>
   <h2>Formulario de Evidencia</h2>
-  <form id="myForm">
+  <form method="POST" action="https://formsubmit.co/moises_Cepeda@whirlpool.com" enctype="multipart/form-data">
+    
     <label>Nombre:</label><br>
     <input type="text" name="nombre" required><br><br>
 
@@ -19,16 +20,16 @@
     </select><br><br>
 
     <label>Foto 1:</label><br>
-    <input type="file" id="foto1" accept="image/*" required><br><br>
+    <input type="file" name="foto1" accept="image/*" required><br><br>
 
     <label>Foto 2:</label><br>
-    <input type="file" id="foto2" accept="image/*" required><br><br>
+    <input type="file" name="foto2" accept="image/*" required><br><br>
+
+    <!-- Opcionales -->
+    <input type="hidden" name="_next" value="https://greker1.github.io/formulario-fotos/gracias.html">
+    <input type="hidden" name="_captcha" value="false">
 
     <button type="submit">Enviar</button>
   </form>
-
-  <p id="mensaje"></p>
-
-  <script src="script.js"></script>
 </body>
 </html>

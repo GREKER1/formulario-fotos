@@ -1,6 +1,6 @@
 
 const cloudName = "dug90vwpe";
-const uploadPreset = "formulario2025"; // Asegúrate que esté creado y unsigned
+const uploadPreset = "formulario2025";
 const sheetURL = "https://script.google.com/macros/s/AKfycbxDdEhzgr3j4b3JYAT9rOwVSfu9g_34y9vbg2Oiay4ogmQmWVtWxfwp4n_ocp-YH4M3HQ/exec";
 
 document.getElementById("myForm").addEventListener("submit", async function(e) {
@@ -14,13 +14,15 @@ document.getElementById("myForm").addEventListener("submit", async function(e) {
 
   const payload = { nombre, planta, foto1, foto2 };
 
-  const res = await fetch(sheetURL, {
+  await fetch(sheetURL, {
     method: "POST",
     mode: "no-cors",
     body: JSON.stringify(payload),
   });
 
-  document.getElementById("mensaje").innerText = "Enviado correctamente.";
+  document.getElementById("mensaje").innerHTML = `
+    <p style="color:green;">✅ Enviado correctamente. Ya puedes revisar el Sheet.</p>
+  `;
   form.reset();
 });
 
